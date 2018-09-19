@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.administrator.todynewdemo.MainActivity">
+<RelativeLayout
+    android:background="#d33c3d"
+    android:layout_width="match_parent"
+    android:layout_height="60dp">
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="280dp"
+        android:layout_height="30dp"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="10dp"
+        android:layout_toStartOf="@+id/button"
+        android:background="@drawable/edit" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/editText2"
+        android:background="@null"
+        android:drawablePadding="-10dp"
+        android:drawableTop="@mipmap/shexiang"
+        android:text="发布"
+        android:textColor="#fff"
+        android:textSize="8dp" />
+
+</RelativeLayout>
+  <LinearLayout
+      android:orientation="vertical"
+      android:layout_width="match_parent"
+      android:layout_height="40dp">
+      <!--
+app:tabGravity="center" 对齐方式，可选fill和center
+app:tabIndicatorColor="@color/colorAccent" 设置tab下划线的颜色
+app:tabMode="scrollable" scrollable是可以横行滚动,fixed是指固定个数
+app:tabSelectedTextColor="@color/colorPrimaryDark" 选择tab的文本颜色
+app:tabTextColor="@color/colorPrimary" 普通tab字体颜色
+-->
+      <android.support.design.widget.TabLayout
+          app:tabPaddingStart="12dp"
+
+          app:tabPaddingEnd="8dp"
+          app:tabIndicatorHeight="0dp"
+          app:tabMaxWidth="200dp"
+          app:tabMinWidth="20dp"
+          android:id="@+id/tl_tab"
+          android:layout_width="match_parent"
+          android:layout_height="fill_parent"
+          app:tabGravity="center"
+          app:tabIndicatorColor="@null"
+          app:tabMode="scrollable"
+          app:tabSelectedTextColor="@color/colorPrimary"
+          app:tabTextColor="#100a0a"
+
+          />
+
+
+
+  </LinearLayout>
+    <FrameLayout
+        android:id="@+id/fragment"
+        android:layout_width="match_parent"
+        android:layout_height="420dp">
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/vp_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </FrameLayout>
+    <RadioGroup
+        android:background="#f4f5f7"
+        android:id="@+id/rg_group"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <RadioButton
+            android:id="@+id/btn1"
+            android:drawableTop="@drawable/r"
+            android:text="首页"
+            style="@style/button" />
+        <RadioButton
+            android:id="@+id/btn2"
+            android:drawableTop="@drawable/yji"
+            android:text="西瓜视频"
+            style="@style/button"
+            />
+        <RadioButton
+            android:id="@+id/btn3"
+            android:drawableTop="@drawable/zhusho"
+            android:text="西瓜视频"
+            style="@style/button"
+            />
+        <RadioButton
+            android:id="@+id/btn4"
+            android:drawableTop="@drawable/gongju"
+            android:text="微头条"
+            style="@style/button"  />
+        <RadioButton
+            android:id="@+id/btn5"
+            android:drawableTop="@drawable/yji"
+            android:text="我的"
+            style="@style/button"  />
+    </RadioGroup>
+
+</LinearLayout>
