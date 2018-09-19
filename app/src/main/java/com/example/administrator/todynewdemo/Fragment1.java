@@ -37,13 +37,13 @@ public class Fragment1 extends Fragment {
 
     private void initData() {
 
-            News news1 = new News(R.mipmap.main_page_table_find_normal,R.mipmap.main_page_table_find_normal,R.mipmap.main_page_table_find_normal,"assda","dsasd",1);
+            News news1 = new News(R.mipmap.pic,R.mipmap.pic,R.mipmap.pic,"assda","dsasd",1);
             data.add(news1);
-            News news2 = new News(R.mipmap.main_page_table_find_normal,R.mipmap.main_page_table_find_normal,R.mipmap.main_page_table_find_normal,"assda","dsasd",2);
+            News news2 = new News(R.mipmap.pic,R.mipmap.pic,R.mipmap.pic,"assda","dsasd",3);
             data.add(news2);
-            News news3 = new News(R.mipmap.main_page_table_find_normal,R.mipmap.main_page_table_find_normal,R.mipmap.main_page_table_find_normal,"assda","dsasd",1);
+            News news3 = new News(R.mipmap.main_page_table_find_normal,R.mipmap.main_page_table_find_normal,R.mipmap.main_page_table_find_normal,"assda","dsasd",2);
             data.add(news3);
-            News news4 = new News(R.mipmap.main_page_table_find_normal,R.mipmap.main_page_table_find_normal,R.mipmap.main_page_table_find_normal,"assda","dsasd",2);
+            News news4 = new News(R.mipmap.main_page_table_find_normal,R.mipmap.main_page_table_find_normal,R.mipmap.main_page_table_find_normal,"assda","dsasd",3);
             data.add(news4);
             News news5 = new News(R.mipmap.main_page_table_find_normal,R.mipmap.main_page_table_find_normal,R.mipmap.main_page_table_find_normal,"assda","dsasd",1);
             data.add(news5);
