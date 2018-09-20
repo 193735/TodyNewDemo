@@ -6,6 +6,8 @@
     android:orientation="vertical"
     >
     <TextView
+        android:textColor="#0a0909"
+        android:textSize="20dp"
         android:id="@+id/text1"
         android:layout_width="match_parent"
         android:layout_height="40dp"

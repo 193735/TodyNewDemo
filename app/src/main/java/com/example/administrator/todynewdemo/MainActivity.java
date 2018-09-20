@@ -20,10 +20,10 @@ import java.util.ArrayList;
  */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private TextView tv_tab;
+
     private ArrayList<Fragment> fragments = new ArrayList<>();
     ArrayList<String>mTitle = new ArrayList<>();
-    String[] mData = new String[20];
+
     TabLayout mTabLayout;
     ViewPager mViewPager;
 
@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void replicefragment(Fragment fragment){
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction transaction = fragmentManager.beginTransaction();
-        transaction.replace(R.id.fragment,fragment);
+        transaction.replace(R.id.vp_pager,fragment);
         transaction.addToBackStack(null);
         transaction.commit();
 
@@ -79,6 +79,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
     private void initData() {
+
 
             mTitle.add("关注");
             mTitle.add("推荐");
@@ -107,7 +108,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public Fragment getItem(int position) {
                 //创建Fragment并返回
                 TabFragment fragment = new TabFragment();
-                fragment.setTitle(mData[position % mTitle.size()]);
+
                 return fragment;
             }
 
