@@ -16,7 +16,7 @@ import java.util.ArrayList;
  * A simple {@link Fragment} subclass.
  */
 public class Fragment1 extends Fragment {
-    private ArrayList<News> data = new ArrayList<>();
+
 
     public Fragment1() {
         // Required empty public constructor

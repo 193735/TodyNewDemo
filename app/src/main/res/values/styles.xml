@@ -19,5 +19,15 @@
 
 
     </style>
+    <style name="AnimationFade">
+
+        <!-- PopupWindow左右弹出的效果 -->
+        <item name="android:windowEnterAnimation">@drawable/inputodown</item>
+        <item name="android:windowExitAnimation">@drawable/outdowntoup</item>
+    </style>
+
+
+
+
 
 </resources>

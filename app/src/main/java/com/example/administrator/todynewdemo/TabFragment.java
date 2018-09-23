@@ -41,21 +41,14 @@ public class TabFragment extends Fragment {
 
     }
     private void initData() {
-
-        News news1 = new News(R.mipmap.pic,R.mipmap.pic,R.mipmap.pic,"assda","dsasd",1);
-        data.add(news1);
-        News news2 = new News(R.mipmap.pic,R.mipmap.pic,R.mipmap.pic,"assda","dsasd",3);
-        data.add(news2);
-        News news3 = new News(R.mipmap.main_page_table_find_normal,R.mipmap.main_page_table_find_normal,R.mipmap.main_page_table_find_normal,"assda","dsasd",2);
-        data.add(news3);
-        News news4 = new News(R.mipmap.main_page_table_find_normal,R.mipmap.main_page_table_find_normal,R.mipmap.main_page_table_find_normal,"assda","dsasd",3);
-        data.add(news4);
-        News news5 = new News(R.mipmap.main_page_table_find_normal,R.mipmap.main_page_table_find_normal,R.mipmap.main_page_table_find_normal,"assda","dsasd",1);
-        data.add(news5);
-        News news6 = new News(R.mipmap.main_page_table_find_normal,R.mipmap.main_page_table_find_normal,R.mipmap.main_page_table_find_normal,"assda","dsasd",2);
-        data.add(news6);
-
-
+for(int i = 0;i<3;i++){
+            News news1 = new News(R.mipmap.pic, R.mipmap.pic, R.mipmap.pic, "[独家V观] 习近平致贺首个中国农民丰收节", "央视新闻移动网", 2);
+            data.add(news1);
+            News news2 = new News(R.mipmap.pic, R.mipmap.pic, R.mipmap.pic, "[独家V观] 习近平致贺首个中国农民丰收节", "央视新闻移动网", 1);
+            data.add(news2);
+            News news3 = new News(R.mipmap.pic, R.mipmap.pic, R.mipmap.pic, "[独家V观] 习近平致贺首个中国农民丰收节", "央视新闻移动网", 0);
+            data.add(news3);
+        }
     }
 
 }

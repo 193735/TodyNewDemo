@@ -28,9 +28,9 @@ public class viewadapter extends BaseAdapter {
 
     public int getItemViewType(int possition) {
         news = data.get(possition);
-        if (news.getType() == 1) {
+        if (news.getType() == 0) {
             return 0;
-        } else if (news.getType() == 2) {
+        } else if (news.getType() == 1) {
             return 1;
         } else {
             return 2;
@@ -39,7 +39,7 @@ public class viewadapter extends BaseAdapter {
 
     @Override
     public int getViewTypeCount() {
-        return 2;
+        return 3;
     }
 
     @Override
@@ -94,6 +94,9 @@ public class viewadapter extends BaseAdapter {
                 textpicViewHolder.textView1 = convertView.findViewById(R.id.textview1);
                 textpicViewHolder.textView2 = convertView.findViewById(R.id.textview2);
                 textpicViewHolder.imageView = convertView.findViewById(R.id.imageview);
+                textpicViewHolder.textView1.setText(news.getText1());
+                textpicViewHolder.textView2.setText(news.getText2());
+                textpicViewHolder.imageView.setImageResource(news.getImage1());
                 convertView.setTag(textpicViewHolder);
             } else {
 
@@ -107,9 +110,10 @@ public class viewadapter extends BaseAdapter {
             if (convertView == null) {
                 convertView = View.inflate(parent.getContext(), R.layout.item2, null);
                 textViewHolder = new textViewHolder();
-                textViewHolder.textView1 = convertView.findViewById(R.id.textview1);
-                textViewHolder.textView2 = convertView.findViewById(R.id.textview2);
-                textViewHolder.imageView = convertView.findViewById(R.id.imageview);
+                textViewHolder.textView1 = convertView.findViewById(R.id.text1);
+                textViewHolder.textView2 = convertView.findViewById(R.id.text2);
+                textViewHolder.textView1.setText(news.getText1());
+                textViewHolder.textView2.setText(news.getText2());
                 convertView.setTag(textViewHolder);
             } else {
 
@@ -142,7 +146,6 @@ public class viewadapter extends BaseAdapter {
     class textViewHolder {
         TextView textView1;
         TextView textView2;
-        ImageView imageView;
 
     }
 }

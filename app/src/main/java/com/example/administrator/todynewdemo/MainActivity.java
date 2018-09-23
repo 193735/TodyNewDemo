@@ -9,16 +9,26 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.Window;
+import android.widget.Button;
+import android.widget.PopupWindow;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 
 /**
  * Created by mChenys on 2016/5/28.
  */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+
+    private PopupWindow popupwindow;
+
 
 
     private ArrayList<Fragment> fragments = new ArrayList<>();
@@ -44,6 +54,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn4.setOnClickListener(this);
         RadioButton btn5 = findViewById(R.id.btn5);
         btn5.setOnClickListener(this);
+        Button btn6 = findViewById(R.id.button);
+        btn6.setOnClickListener(this);
         initFragment();
         replicefragment(fragments.get(0));
 
@@ -69,11 +81,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
-    /**
-     *  用来改变tabLayout选中后的字体大小及颜色
-     * @param
-     * @param
-     */
+
 
 
 
@@ -101,7 +109,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public CharSequence getPageTitle(int position) {
 
-                return mTitle.get(position % mTitle.size());
+                return mTitle.get(position);
             }
 
             @Override
@@ -124,18 +132,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //  因为setupWithViewPager内部也是通过设置该监听来触发ViewPager的切换的.
 
 
-        /**
-         *  用来改变tabLayout选中后的字体大小及颜色
-         * @param tab
-         * @param isSelect
-         */
+
 
         }
 
     @Override
     public void onClick(View view) {
-        switch(view.getId()){
-            case R .id.btn1:
+        switch (view.getId()) {
+            case R.id.btn1:
                 replicefragment(fragments.get(0));
                 break;
             case R.id.btn2:
@@ -144,11 +148,52 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn3:
                 replicefragment(fragments.get(2));
                 break;
+            case R.id.button:
+                if (popupwindow != null && popupwindow.isShowing()) {
+                    popupwindow.dismiss();
+                    return;
+                } else {
+                    initmPopupWindowView();
+                    popupwindow.showAsDropDown(view, 10, 5);
+                }
+                break;
+            default:
+                break;
         }
     }
+    public void initmPopupWindowView() {
+
+        // // 获取自定义布局文件pop.xml的视图
+        View customView = getLayoutInflater().inflate(R.layout.menu_item,
+                null, false);
+        // 创建PopupWindow实例,200,150分别是宽度和高度
+        popupwindow = new PopupWindow(customView, 450, 600);
+        // 设置动画效果 [R.style.AnimationFade 是自己事先定义好的]
+        popupwindow.setAnimationStyle(R.style.AnimationFade);
+        // 自定义view添加触摸事件
+        customView.setOnTouchListener(new View.OnTouchListener() {
+
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if (popupwindow != null && popupwindow.isShowing()) {
+                    popupwindow.dismiss();
+                    popupwindow = null;
+                }
+
+                return false;
+            }
+        });
 
 
-//  那我们如果真的需要监听tab的点击或者ViewPager的切换,则需要手动配置ViewPager的切换,例如:
+
+
+
+
+        }
+
+
+
+
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event)
@@ -165,7 +210,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         return super.onKeyDown(keyCode, event);
     }
 
-    }
+
+
+
+}
 
 
 
