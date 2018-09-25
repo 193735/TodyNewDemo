@@ -3,26 +3,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#232323" >
+    android:background="@drawable/edit" >
 
     <Button
-        android:gravity="center"
-        android:drawableLeft="@drawable/yji"
-        android:drawablePadding="10dp"
-        android:textColor="#ffff"
-        android:background="@null"
+        android:paddingLeft="30dp"
         android:id="@+id/button2"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:paddingRight="70dp"
-        android:text="viviens" />
+        android:layout_alignParentStart="true"
 
-    <Button
+        android:layout_alignParentTop="true"
+        android:background="@null"
         android:drawableLeft="@drawable/yji"
         android:drawablePadding="10dp"
-        android:textColor="#ffff"
+        android:gravity="center"
+        android:paddingRight="70dp"
+        android:text="我的"
+        android:textColor="#060606" />
+
+    <Button
+        android:paddingLeft="30dp"
+        android:drawableLeft="@drawable/yji"
+        android:drawablePadding="10dp"
+        android:textColor="#060606"
         android:background="@null"
         android:id="@+id/button3"
         android:layout_width="200dp"
@@ -30,20 +33,21 @@
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/button2"
         android:paddingRight="70dp"
-        android:text="mryang" />
+        android:text="我的" />
 
     <Button
         android:drawableLeft="@drawable/yji"
         android:drawablePadding="10dp"
-        android:textColor="#ffff"
+        android:paddingLeft="30dp"
         android:background="@null"
         android:id="@+id/button4"
+        android:textColor="#060606"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/button3"
         android:paddingRight="70dp"
-        android:text="张晓达" />
+        android:text="我的" />
 
 </RelativeLayout>
 

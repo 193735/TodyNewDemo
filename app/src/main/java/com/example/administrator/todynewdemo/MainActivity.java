@@ -1,5 +1,6 @@
 package com.example.administrator.todynewdemo;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -15,6 +16,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.PopupWindow;
 import android.widget.RadioButton;
 import android.widget.TextView;
@@ -28,7 +30,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private PopupWindow popupwindow;
-
+    private ImageButton imageButton;
 
 
     private ArrayList<Fragment> fragments = new ArrayList<>();
@@ -56,6 +58,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn5.setOnClickListener(this);
         Button btn6 = findViewById(R.id.button);
         btn6.setOnClickListener(this);
+        imageButton = findViewById(R.id.imageButton);
+        imageButton.setOnClickListener(this);
         initFragment();
         replicefragment(fragments.get(0));
 
@@ -88,16 +92,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void initData() {
 
-
-            mTitle.add("关注");
-            mTitle.add("推荐");
-            mTitle.add("南京");
-            mTitle.add("教育");
-            mTitle.add("数码");
-            mTitle.add("游戏");
-            mTitle.add("视频");
-            mTitle.add("热点");
-
+for(int i = 0;i<=2;i++) {
+    mTitle.add("关注");
+    mTitle.add("推荐");
+    mTitle.add("南京");
+    mTitle.add("教育");
+    mTitle.add("数码");
+    mTitle.add("游戏");
+    mTitle.add("视频");
+    mTitle.add("热点");
+}
 
     }
 
@@ -157,8 +161,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     popupwindow.showAsDropDown(view, 10, 5);
                 }
                 break;
-            default:
-                break;
+            case R.id.imageButton:
+                Intent intent = new Intent(MainActivity.this,gridActivity.class);
+                intent.putStringArrayListExtra("Title", mTitle);
+                startActivity(intent);
         }
     }
     public void initmPopupWindowView() {
@@ -167,9 +173,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         View customView = getLayoutInflater().inflate(R.layout.menu_item,
                 null, false);
         // 创建PopupWindow实例,200,150分别是宽度和高度
-        popupwindow = new PopupWindow(customView, 450, 600);
-        // 设置动画效果 [R.style.AnimationFade 是自己事先定义好的]
-        popupwindow.setAnimationStyle(R.style.AnimationFade);
+        popupwindow = new PopupWindow(customView, 530, 600);
+
+
         // 自定义view添加触摸事件
         customView.setOnTouchListener(new View.OnTouchListener() {
 

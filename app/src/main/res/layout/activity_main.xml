@@ -31,13 +31,12 @@
             android:drawablePadding="-10dp"
             android:drawableTop="@mipmap/shexiang"
             android:text="发布"
-            style="@style/AnimationFade"
             android:textColor="#fff"
             android:textSize="8dp" />
 
     </RelativeLayout>
   <LinearLayout
-      android:orientation="vertical"
+      android:orientation="horizontal"
       android:layout_width="match_parent"
       android:layout_height="40dp">
       <!--
@@ -55,7 +54,7 @@ app:tabTextColor="@color/colorPrimary" 普通tab字体颜色
           app:tabMaxWidth="200dp"
           app:tabMinWidth="20dp"
           android:id="@+id/tl_tab"
-          android:layout_width="match_parent"
+          android:layout_width="320dp"
           android:layout_height="fill_parent"
           app:tabGravity="center"
           app:tabIndicatorColor="@null"
@@ -65,9 +64,20 @@ app:tabTextColor="@color/colorPrimary" 普通tab字体颜色
 
           />
 
+      <ImageButton
+          android:id="@+id/imageButton"
+          android:layout_width="40dp"
+          android:layout_height="40dp"
+          android:background="@null"
+          android:src="@mipmap/jia" />
 
 
   </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#cfcece"
+        ></LinearLayout>
     <android.support.v4.view.ViewPager
         android:id="@+id/vp_pager"
         android:layout_width="match_parent"
