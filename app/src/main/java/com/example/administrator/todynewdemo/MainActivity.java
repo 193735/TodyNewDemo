@@ -119,6 +119,7 @@ for(int i = 0;i<=2;i++) {
             @Override
             public Fragment getItem(int position) {
                 //创建Fragment并返回
+
                 TabFragment fragment = new TabFragment();
 
                 return fragment;
@@ -162,9 +163,7 @@ for(int i = 0;i<=2;i++) {
                 }
                 break;
             case R.id.imageButton:
-                Intent intent = new Intent(MainActivity.this,gridActivity.class);
-                intent.putStringArrayListExtra("Title", mTitle);
-                startActivity(intent);
+
         }
     }
     public void initmPopupWindowView() {
@@ -210,6 +209,7 @@ for(int i = 0;i<=2;i++) {
 
 
             finish();
+
 
             return true;
         }

@@ -41,14 +41,14 @@ public class TabFragment extends Fragment {
 
     }
     private void initData() {
-for(int i = 0;i<3;i++){
+         for(int i = 0;i<3;i++){
             News news1 = new News(R.mipmap.pic, R.mipmap.pic, R.mipmap.pic, "[独家V观] 习近平致贺首个中国农民丰收节", "央视新闻移动网", 2);
             data.add(news1);
             News news2 = new News(R.mipmap.pic, R.mipmap.pic, R.mipmap.pic, "[独家V观] 习近平致贺首个中国农民丰收节", "央视新闻移动网", 1);
             data.add(news2);
             News news3 = new News(R.mipmap.pic, R.mipmap.pic, R.mipmap.pic, "[独家V观] 习近平致贺首个中国农民丰收节", "央视新闻移动网", 0);
             data.add(news3);
-        }
-    }
+         }
+     }
 
-}
+ }
